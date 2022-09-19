@@ -1,0 +1,10 @@
+.info{
+    background-color: $light-gray ;
+    &__form{
+        background-color: $dark-gray;
+    }
+    &__search{
+        background-color: $dark-gray;
+        border: none;
+    }
+}
