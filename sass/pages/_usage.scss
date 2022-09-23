@@ -1,4 +1,4 @@
-.nav{
+.usage{
     &__list{
         display: flex;
         justify-content: space-evenly;
@@ -34,10 +34,10 @@
         bottom: 0;  
         left: 0;
         border-radius: 15px;
-        background-color: lighten($color-primary, 35);
+        background-color: lighten($color-primary, 36);
         opacity: 0;
         z-index: -1;
-        transition: opacity 250ms;
+        transition: opacity 350ms ease-in-out;
     }
     i{
         color: gray;

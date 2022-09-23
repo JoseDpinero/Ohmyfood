@@ -1,7 +1,9 @@
 @import"./utils/variable";
 @import"./utils/mixin";
 @import "./base/base";
+@import "./layouts/nav";
 @import "./pages/info";
-@import "./pages/nav";
+@import "./pages/usage";
 @import "./pages/card";
 @import "./layouts/footer";
+@import "./components/btn";

@@ -1,0 +1,13 @@
+.nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a{
+        font-size: 40px;
+        position: absolute;
+        left: 10px;
+    }
+    &__logo{
+        width: 200px;
+    }
+}
