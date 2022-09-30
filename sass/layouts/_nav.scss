@@ -1,13 +1,23 @@
-.nav{
+.nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    a{
+
+    a {
         font-size: 40px;
         position: absolute;
         left: 10px;
+        @include phone_only{
+            font-size: 2em;
+        }
     }
-    &__logo{
-        width: 200px;
+
+    &__logo {
+        font-family: 'Shrikhand','Courier New', Courier, monospace;        
+        font-size: 40px;
+        margin: 1% 0;
+        @include phone_only{
+            font-size: 2em;
+        }
     }
 }

@@ -1,10 +1,13 @@
-.info{
+.info {
     background-color: $light-gray ;
     text-align: center;
-    &__form{
+    padding: 0 0 50px 0;
+
+    &__form {
         background-color: $dark-gray;
     }
-    &__search{
+
+    &__search {
         background-color: $dark-gray;
         border: none;
     }

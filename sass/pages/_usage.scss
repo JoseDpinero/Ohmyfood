@@ -1,46 +1,85 @@
-.usage{
-    &__list{
+.usage {
+    @include phone_only {
+        width: 90%;
+        margin: 50px auto;
+    }
+
+    &__list {
         display: flex;
         justify-content: space-evenly;
-        &--circle{
+
+        &--circle {
             background-color: $color-primary;
             color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            margin-left: -12px;
+
+        }
+
+        &-item {
+            width: 25%;
+
+            @include phone_only {
+                width: 100%;
+                margin: 15px;
+            }
+        }
+
+
+        @include phone_only {
+            flex-direction: column;
+
+
         }
     }
-    a{
+
+    a {
         position: relative;
         border-radius: 15px;
         background-color: $light-gray;
         display: flex;
         align-items: center;
-        width: 200px;
-        height: 50px;
-        color:black;
+        height: 70px;
+        color: black;
+        box-shadow: 2px 5px 10px darken($dark-gray, 5%);
         z-index: 1;
-        &:hover{
-            &::after{
+
+        @include phone_only {
+            width: 100%;
+        }
+
+        &:hover {
+            &::after {
                 opacity: 1;
             }
-            
-            & i{
+
+            & i {
                 color: $color-primary;
             }
         }
-      &::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;  
-        left: 0;
-        border-radius: 15px;
-        background-color: lighten($color-primary, 36);
-        opacity: 0;
-        z-index: -1;
-        transition: opacity 350ms ease-in-out;
-    }
-    i{
-        color: gray;
-    }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            border-radius: 15px;
+            background-color: lighten($color-primary, 35);
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 350ms ease-in-out;
+        }
+
+        i {
+            color: gray;
+            margin: 0 20px;
+        }
     }
 }

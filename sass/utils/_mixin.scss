@@ -1,0 +1,41 @@
+@mixin liked {
+    i {
+        position: absolute;
+        font-size: 35px;
+        @content;
+
+    }
+
+    .fa-regular:hover {
+        opacity: 0;
+
+    }
+
+    .fa-solid {
+        background: linear-gradient($color-primary , $color-secondary);
+        background-clip: border-box;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        opacity: 0;
+        z-index: 1;
+
+        &:hover {
+            opacity: 1;
+            transition: opacity 350ms ease-in-out;
+        }
+    }
+
+}
+
+@mixin overflow-hidden {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+}
+
+@mixin phone_only {
+    @media screen and (max-width: 1025px) {
+        @content;
+    }
+}

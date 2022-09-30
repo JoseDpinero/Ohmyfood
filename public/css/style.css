@@ -1,5 +1,16 @@
+@keyframes animation-card {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
 body {
   margin: auto;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
 }
 
 ul {
@@ -22,13 +33,26 @@ a {
   position: absolute;
   left: 10px;
 }
+@media screen and (max-width: 1025px) {
+  .nav a {
+    font-size: 2em;
+  }
+}
 .nav__logo {
-  width: 200px;
+  font-family: "Shrikhand", "Courier New", Courier, monospace;
+  font-size: 40px;
+  margin: 1% 0;
+}
+@media screen and (max-width: 1025px) {
+  .nav__logo {
+    font-size: 2em;
+  }
 }
 
 .info {
   background-color: #F6F6F6;
   text-align: center;
+  padding: 0 0 50px 0;
 }
 .info__form {
   background-color: #EAEAEA;
@@ -38,6 +62,12 @@ a {
   border: none;
 }
 
+@media screen and (max-width: 1025px) {
+  .usage {
+    width: 90%;
+    margin: 50px auto;
+  }
+}
 .usage__list {
   display: flex;
   justify-content: space-evenly;
@@ -45,6 +75,27 @@ a {
 .usage__list--circle {
   background-color: #9356DC;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  margin-left: -12px;
+}
+.usage__list-item {
+  width: 25%;
+}
+@media screen and (max-width: 1025px) {
+  .usage__list-item {
+    width: 100%;
+    margin: 15px;
+  }
+}
+@media screen and (max-width: 1025px) {
+  .usage__list {
+    flex-direction: column;
+  }
 }
 .usage a {
   position: relative;
@@ -52,10 +103,15 @@ a {
   background-color: #F6F6F6;
   display: flex;
   align-items: center;
-  width: 200px;
-  height: 50px;
+  height: 70px;
   color: black;
+  box-shadow: 2px 5px 10px #dddddd;
   z-index: 1;
+}
+@media screen and (max-width: 1025px) {
+  .usage a {
+    width: 100%;
+  }
 }
 .usage a:hover::after {
   opacity: 1;
@@ -71,13 +127,14 @@ a {
   bottom: 0;
   left: 0;
   border-radius: 15px;
-  background-color: #f4eefc;
+  background-color: #f2eafb;
   opacity: 0;
   z-index: -1;
   transition: opacity 350ms ease-in-out;
 }
 .usage a i {
   color: gray;
+  margin: 0 20px;
 }
 
 main {
@@ -87,6 +144,11 @@ main {
 .restaurants {
   display: flex;
   flex-wrap: wrap;
+}
+@media screen and (max-width: 1025px) {
+  .restaurants {
+    flex-direction: column;
+  }
 }
 
 .card {
@@ -107,13 +169,17 @@ main {
 }
 .card__new {
   background-color: #99E2D0;
+  color: #299077;
+  padding: 5px 10px;
+  font-size: 14px;
   position: absolute;
   top: 0px;
   right: 30px;
+  border-radius: 3px;
 }
 .card i {
   position: absolute;
-  font-size: 30px;
+  font-size: 35px;
   right: 30px;
   bottom: 30px;
 }
@@ -130,20 +196,230 @@ main {
 }
 .card .fa-solid:hover {
   opacity: 1;
-  transition: opacity 350ms;
+  transition: opacity 350ms ease-in-out;
+}
+@media screen and (max-width: 1025px) {
+  .card {
+    width: 94%;
+  }
+}
+
+.restaurant {
+  background-color: #F6F6F6;
+  padding: 0 0 50px 0;
+}
+.restaurant__image {
+  height: 15vw;
+}
+@media screen and (max-width: 1025px) {
+  .restaurant__image {
+    height: 50vw;
+  }
+}
+.restaurant__image img {
+  width: 100%;
+  height: 18vw;
+  object-fit: cover;
+}
+@media screen and (max-width: 1025px) {
+  .restaurant__image img {
+    height: 62vw;
+  }
+}
+.restaurant__card {
+  position: relative;
+  background-color: #F6F6F6;
+  border-top-left-radius: 3em;
+  border-top-right-radius: 3em;
+}
+.restaurant h2 {
+  width: 300px;
+  position: relative;
+  margin: 0;
+  padding: 20px;
+  font-family: "Shrikhand";
+}
+.restaurant h2 i {
+  position: absolute;
+  font-size: 35px;
+  right: 20px;
+}
+.restaurant h2 .fa-regular:hover {
+  opacity: 0;
+}
+.restaurant h2 .fa-solid {
+  background: linear-gradient(#9356DC, #FF79DA);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+  z-index: 1;
+}
+.restaurant h2 .fa-solid:hover {
+  opacity: 1;
+  transition: opacity 350ms ease-in-out;
+}
+@media screen and (max-width: 1025px) {
+  .restaurant h2 {
+    width: auto;
+    min-width: 230px;
+  }
+}
+
+.menu {
+  display: flex;
+  justify-content: space-evenly;
+}
+@media screen and (max-width: 1025px) {
+  .menu {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.menu-course {
+  width: 31%;
+}
+@media screen and (max-width: 1025px) {
+  .menu-course {
+    width: 94%;
+  }
+}
+.menu-course h3 {
+  margin-left: 10px;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+.menu-course h3::after {
+  content: "";
+  border-bottom: 3px solid #99E2D0;
+  width: 45px;
+  display: block;
+}
+.menu-course__card {
+  background-color: white;
+  box-shadow: 10px 10px 10px #dddddd;
+  margin: 6% 0;
+  display: flex;
+  overflow: hidden;
+  align-items: flex-end;
+  border-radius: 15px;
+  animation: 500ms ease animation-card both;
+}
+.menu-course__card:hover .menu-course__check {
+  margin-right: 0;
+}
+.menu-course__card:hover i {
+  transform: rotate(0deg);
+}
+.menu-course__card:hover .menu-course__price {
+  margin-right: -10px;
+}
+.menu-course__choice {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+.menu-course__name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 16px 0 0 10px;
+}
+.menu-course__desc {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 5px 0 16px 10px;
+}
+.menu-course__price {
+  padding-right: 20px;
+  font-weight: bold;
+  font-style: normal;
+  margin-right: 0;
+  transition: margin-right 200ms 100ms ease-in-out;
+}
+.menu-course__check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #99E2D0;
+  color: #99E2D0;
+  height: 75px;
+  min-width: 70px;
+  margin-right: -70px;
+  transition: margin-right 500ms ease-in-out;
+}
+.menu-course__check i {
+  font-size: 20px;
+  padding: 4px;
+  background-color: white;
+  transform: rotate(-360deg);
+  transition: transform 300ms ease-in-out 155ms;
+  border-radius: 50%;
+}
+.menu .animation-1 {
+  animation-delay: 145ms;
+}
+.menu .animation-2 {
+  animation-delay: 290ms;
+}
+.menu .animation-3 {
+  animation-delay: 435ms;
+}
+.menu .animation-4 {
+  animation-delay: 580ms;
+}
+.menu .animation-5 {
+  animation-delay: 725ms;
+}
+.menu .animation-6 {
+  animation-delay: 870ms;
+}
+.menu .animation-7 {
+  animation-delay: 1015ms;
+}
+.menu .animation-8 {
+  animation-delay: 1160ms;
+}
+.menu .animation-9 {
+  animation-delay: 1305ms;
+}
+.menu .animation-10 {
+  animation-delay: 1450ms;
 }
 
 .footer {
   background-color: #353535;
   color: white;
-  padding: 1rem 0 1rem 1rem;
+  padding: 1rem 0 1rem 2rem;
 }
 .footer a {
   color: white;
 }
+.footer ul {
+  position: relative;
+}
+.footer i {
+  margin-right: 0;
+}
+.footer i + a {
+  position: absolute;
+  left: 30px;
+}
+.footer li {
+  padding: 5px 0;
+}
+.footer h3 {
+  font-family: "Shrikhand", "Times New Roman", Times, serif;
+  font-weight: 100;
+}
 
 .btn {
   border: none;
+  display: block;
+  margin: auto;
+  margin-top: 50px;
   background: linear-gradient(to bottom right, #FF79DA, 45%, #9356DC);
   color: white;
   font-weight: bold;
