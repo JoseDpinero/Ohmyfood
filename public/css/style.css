@@ -41,6 +41,7 @@ a {
 .nav__logo {
   font-family: "Shrikhand", "Courier New", Courier, monospace;
   font-size: 40px;
+  font-weight: normal;
   margin: 1% 0;
 }
 @media screen and (max-width: 1025px) {
@@ -167,24 +168,45 @@ main {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
+@media screen and (max-width: 1025px) {
+  .card__image {
+    height: 50vw;
+  }
+}
 .card__new {
   background-color: #99E2D0;
   color: #299077;
   padding: 5px 10px;
   font-size: 14px;
   position: absolute;
-  top: 0px;
+  top: 10px;
   right: 30px;
   border-radius: 3px;
 }
 .card i {
   position: absolute;
   font-size: 35px;
+  width: 36px;
   right: 30px;
   bottom: 30px;
 }
+@media screen and (max-width: 1025px) {
+  .card i {
+    font-size: 25px;
+  }
+}
+.card .fa-regular {
+  opacity: 1;
+  z-index: 1;
+}
 .card .fa-regular:hover {
   opacity: 0;
+  transition: all 250ms ease-in-out;
+}
+.card .fa-regular:hover + i {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 350ms ease-in-out;
 }
 .card .fa-solid {
   background: linear-gradient(#9356DC, #FF79DA);
@@ -192,11 +214,7 @@ main {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   opacity: 0;
-  z-index: 1;
-}
-.card .fa-solid:hover {
-  opacity: 1;
-  transition: opacity 350ms ease-in-out;
+  transform: scale(0);
 }
 @media screen and (max-width: 1025px) {
   .card {
@@ -237,15 +255,32 @@ main {
   position: relative;
   margin: 0;
   padding: 20px;
-  font-family: "Shrikhand";
+  font-family: "Shrikhand", "Times New Roman", Times, serif;
+  font-weight: normal;
 }
 .restaurant h2 i {
   position: absolute;
   font-size: 35px;
+  width: 36px;
   right: 20px;
+}
+@media screen and (max-width: 1025px) {
+  .restaurant h2 i {
+    font-size: 25px;
+  }
+}
+.restaurant h2 .fa-regular {
+  opacity: 1;
+  z-index: 1;
 }
 .restaurant h2 .fa-regular:hover {
   opacity: 0;
+  transition: all 250ms ease-in-out;
+}
+.restaurant h2 .fa-regular:hover + i {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 350ms ease-in-out;
 }
 .restaurant h2 .fa-solid {
   background: linear-gradient(#9356DC, #FF79DA);
@@ -253,11 +288,7 @@ main {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   opacity: 0;
-  z-index: 1;
-}
-.restaurant h2 .fa-solid:hover {
-  opacity: 1;
-  transition: opacity 350ms ease-in-out;
+  transform: scale(0);
 }
 @media screen and (max-width: 1025px) {
   .restaurant h2 {
@@ -426,6 +457,7 @@ main {
   height: 45px;
   border-radius: 20px;
   position: relative;
+  box-shadow: 2px 5px 5px 5px #EAEAEA;
   z-index: 1;
 }
 .btn:hover::after {
@@ -442,6 +474,7 @@ main {
   background: linear-gradient(to bottom right, #ff93e1, 45%, #a16be0);
   opacity: 0;
   z-index: -1;
+  box-shadow: 2px 5px 5px 5px #c4c4c4;
   transition: opacity 350ms ease-in-out;
 }
 .btn-info {

@@ -2,13 +2,28 @@
     i {
         position: absolute;
         font-size: 35px;
+        width: 36px;
         @content;
+        @include phone_only{
+            font-size: 25px;
+        }
 
     }
 
-    .fa-regular:hover {
+    .fa-regular{
+        opacity: 1;
+        z-index: 1;
+    &:hover {
         opacity: 0;
+        transition: all 250ms ease-in-out;
+        & + i{
+            opacity: 1;
+            transform: scale(1);
+            transition: all 350ms ease-in-out;
 
+        }
+        
+    }
     }
 
     .fa-solid {
@@ -17,12 +32,8 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         opacity: 0;
-        z-index: 1;
+        transform: scale(0);
 
-        &:hover {
-            opacity: 1;
-            transition: opacity 350ms ease-in-out;
-        }
     }
 
 }

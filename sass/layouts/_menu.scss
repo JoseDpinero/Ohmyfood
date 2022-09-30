@@ -35,7 +35,8 @@
         position: relative;
         margin: 0;
         padding: 20px;
-        font-family: 'Shrikhand';
+        font-family: 'Shrikhand', "Times New Roman", Times, serif;
+        font-weight: normal;
         @include liked {
             right: 20px;
         }

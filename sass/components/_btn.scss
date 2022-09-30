@@ -9,6 +9,7 @@
     height: 45px;
     border-radius: 20px;
     position: relative;
+    box-shadow: 2px 5px 5px 5px $dark-gray;
     z-index: 1;
 
     &:hover {
@@ -28,6 +29,7 @@
         background: linear-gradient(to bottom right, lighten($color-secondary, 5), 45%, lighten($color-primary, 5));
         opacity: 0;
         z-index: -1;
+        box-shadow: 2px 5px 5px 5px darken($dark-gray, 15);
         transition: opacity 350ms ease-in-out;
     }
 

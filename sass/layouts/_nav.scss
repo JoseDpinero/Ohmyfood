@@ -7,16 +7,19 @@
         font-size: 40px;
         position: absolute;
         left: 10px;
-        @include phone_only{
+
+        @include phone_only {
             font-size: 2em;
         }
     }
 
     &__logo {
-        font-family: 'Shrikhand','Courier New', Courier, monospace;        
+        font-family: 'Shrikhand', 'Courier New', Courier, monospace;
         font-size: 40px;
+        font-weight: normal;
         margin: 1% 0;
-        @include phone_only{
+
+        @include phone_only {
             font-size: 2em;
         }
     }

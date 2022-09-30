@@ -25,6 +25,9 @@ main {
         object-fit: cover;
         border-top-left-radius: 20px;
         border-top-right-radius: 20px;
+        @include phone_only{
+            height: 50vw;
+        }
 
     }
 
@@ -34,7 +37,7 @@ main {
         padding: 5px 10px;
         font-size: 14px;
         position: absolute;
-        top: 0px;
+        top: 10px;
         right: 30px;
         border-radius: 3px;
     }
