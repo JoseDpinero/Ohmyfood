@@ -6,6 +6,7 @@
         @content;
         @include phone_only{
             font-size: 25px;
+            right: 15px;
         }
 
     }
@@ -46,7 +47,13 @@
 }
 
 @mixin phone_only {
-    @media screen and (max-width: 1025px) {
+    @media screen and (max-width: 499px) {
         @content;
     }
+}
+@mixin small_screen {
+    @media screen and (min-width:500px) and (max-width: 1058px){
+        @content;
+    }
+    
 }
