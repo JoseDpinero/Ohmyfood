@@ -23,6 +23,39 @@ a {
   text-decoration: none;
 }
 
+.loading {
+  opacity: 0.8;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: #F6F6F6;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: 200ms ease-in loading 1.5s both;
+}
+.loading::after {
+  content: "Bienvenue";
+  position: absolute;
+  border-bottom: 4px solid #99E2D0;
+}
+.loading .fa-spinner {
+  background: linear-gradient(#9356DC, #FF79DA);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 160px;
+}
+
+@keyframes loading {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
 .nav {
   display: flex;
   justify-content: center;
@@ -81,6 +114,11 @@ a {
   margin: 50px auto;
   width: 90%;
 }
+@media screen and (min-width: 500px) and (max-width: 1058px) {
+  .usage {
+    text-align: center;
+  }
+}
 .usage__title {
   font-size: 1.3em;
 }
@@ -134,7 +172,7 @@ a {
   height: 70px;
   color: black;
   box-shadow: 2px 5px 10px #cccccc;
-  z-index: 1;
+  z-index: 0;
 }
 @media screen and (max-width: 499px) {
   .usage a {
@@ -173,6 +211,11 @@ main h2 {
   font-size: 1.3em;
   width: 90%;
   margin: 10px auto;
+}
+@media screen and (min-width: 500px) and (max-width: 1058px) {
+  main h2 {
+    width: max-content;
+  }
 }
 
 .restaurants {
@@ -241,11 +284,11 @@ main h2 {
 }
 .card .fa-regular {
   opacity: 1;
-  z-index: 1;
 }
 .card .fa-regular:hover {
+  z-index: 1;
   opacity: 0;
-  transition: all 250ms ease-in-out;
+  transition: all 350ms ease-in-out;
 }
 .card .fa-regular:hover + i {
   opacity: 1;
@@ -284,7 +327,12 @@ main h2 {
   padding: 0 0 50px 0;
 }
 .restaurant__image {
-  height: 15vw;
+  height: 17vw;
+}
+@media screen and (min-width: 500px) and (max-width: 1058px) {
+  .restaurant__image {
+    height: 254px;
+  }
 }
 @media screen and (max-width: 499px) {
   .restaurant__image {
@@ -293,8 +341,13 @@ main h2 {
 }
 .restaurant__image img {
   width: 100%;
-  height: 18vw;
+  height: 20vw;
   object-fit: cover;
+}
+@media screen and (min-width: 500px) and (max-width: 1058px) {
+  .restaurant__image img {
+    height: 310px;
+  }
 }
 @media screen and (max-width: 499px) {
   .restaurant__image img {
@@ -329,11 +382,11 @@ main h2 {
 }
 .restaurant h2 .fa-regular {
   opacity: 1;
-  z-index: 1;
 }
 .restaurant h2 .fa-regular:hover {
+  z-index: 1;
   opacity: 0;
-  transition: all 250ms ease-in-out;
+  transition: all 350ms ease-in-out;
 }
 .restaurant h2 .fa-regular:hover + i {
   opacity: 1;
@@ -347,6 +400,11 @@ main h2 {
   -webkit-text-fill-color: transparent;
   opacity: 0;
   transform: scale(0);
+}
+@media screen and (min-width: 500px) and (max-width: 1058px) {
+  .restaurant h2 {
+    margin: auto;
+  }
 }
 @media screen and (max-width: 499px) {
   .restaurant h2 {
@@ -527,7 +585,7 @@ main h2 {
   border-radius: 20px;
   position: relative;
   box-shadow: 2px 5px 5px 5px #D9D9D9;
-  z-index: 1;
+  z-index: 0;
 }
 .btn:hover::after {
   opacity: 1;

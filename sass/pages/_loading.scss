@@ -1,0 +1,32 @@
+.loading{
+    opacity: 0.8;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: $light-gray;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: 200ms ease-in loading 1.5s both  ;    
+       &::after{
+        content: "Bienvenue";        
+        position: absolute;
+        border-bottom: 4px solid $color-tertiary ;
+    }
+    & .fa-spinner{
+        background: linear-gradient($color-primary, $color-secondary);
+        background-clip: border-box;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 160px;
+    }
+}
+@keyframes loading{
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(0);
+    }
+}

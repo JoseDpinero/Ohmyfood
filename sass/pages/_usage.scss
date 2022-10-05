@@ -2,6 +2,10 @@
     margin: 50px auto;
     width: 90%;
 
+    @include small_screen {
+        text-align: center;
+    }
+
     &__title {
         font-size: 1.3em;
     }
@@ -58,7 +62,7 @@
         height: 70px;
         color: black;
         box-shadow: 2px 5px 10px darken($dark-gray, 5%);
-        z-index: 1;
+        z-index: 0;
 
         @include phone_only {
             width: 100%;

@@ -6,6 +6,11 @@ main {
         font-size: 1.3em;
         width: 90%;
         margin: 10px auto;
+
+        @include small_screen{
+            width: max-content;
+            
+        }
     }
 }
 

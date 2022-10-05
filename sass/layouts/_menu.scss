@@ -4,7 +4,11 @@
 
     &__image {
 
-        height: 15vw;
+        height: 17vw;
+
+        @include small_screen{
+            height: 254px;
+        }
 
         @include phone_only {
             height: 50vw;
@@ -13,9 +17,12 @@
         & img {
 
             width: 100%;
-            height: 18vw;
+            height: 20vw;
             object-fit: cover;
 
+            @include small_screen {
+                height: 310px;
+            }
             @include phone_only {
                 height: 62vw;
             }
@@ -37,8 +44,13 @@
         padding: 20px;
         font-family: 'Shrikhand', "Times New Roman", Times, serif;
         font-weight: normal;
+
         @include liked {
             right: 20px;
+        }
+
+        @include small_screen{
+            margin: auto;
         }
 
         @include phone_only {
@@ -52,7 +64,7 @@
     display: flex;
     justify-content: space-evenly;
 
-    @include small_screen{
+    @include small_screen {
         flex-direction: column;
         align-items: center;
     }
@@ -77,6 +89,7 @@
             margin-left: 10px;
             text-transform: uppercase;
             font-weight: 300;
+
             &::after {
                 content: "";
                 border-bottom: 3px solid #99E2D0;
@@ -94,7 +107,7 @@
             align-items: flex-end;
             border-radius: 15px;
             animation: 500ms ease animation-card both;
-            
+
 
             &:hover {
 
@@ -160,7 +173,8 @@
         }
 
     }
-    .animation-{
+
+    .animation- {
         @for $i from 1 through 10 {
             &#{$i} {
                 animation-delay: 145ms*$i;
